@@ -1,0 +1,7 @@
+<?php
+session_start();
+//if(($_SESSION[usercategory]== A) || ( $_SESSION[JT]== ON AND $_SESSION[usercategory]== U)){
+if($_SESSION['pmusercategory'] !='A' ){
+header("location:dashboard.php");
+}
+?>

@@ -1,0 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['UId']) || !isset($_SESSION['URole']) || !isset($_SESSION['UEmail']) || !isset($_SESSION['UName'])){
+header("location:index.php");
+}
+?>
+
+$_SESSION['UName']="$row[Fname] $row[Mname] $row[Sname]";
+			$_SESSION['URole']="$row[Role]";
+			$_SESSION['UId']="$row[UserId]";
+			$_SESSION['UEmail']="$row[Email]";
+			$_SESSION['UPhoneno']="$row[Phoneno]";

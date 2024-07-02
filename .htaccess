@@ -1,0 +1,7 @@
+
+#<FilesMatch ".(php4|php5|php3|php2|php|phtml)$">
+#SetHandler application/x-httpd-alt-php70__.lsphp
+#</FilesMatch>
+#AddHandler application/x-httpd-php70 .php
+php_value upload_max_filesize 50M
+php_value post_max_size 50M

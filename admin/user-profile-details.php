@@ -1,0 +1,1126 @@
+<?php
+require_once 'connectors/session.php';
+require_once 'connectors/conn.php';
+//require_once 'connectors/functions.php';
+
+
+if(isset($_POST['Action'])){
+$Action = $_POST['Action'];	
+$EId = $_POST['EId'];
+
+
+
+if($Action=="Approve" AND $Action !==""){
+	
+$updb= "UPDATE enrollment SET Status='Inprogress', Approve='Approved' WHERE EId='$EId'";		
+		$ud=mysqli_query ($link, $updb);
+			$msg="<center><msg>Approved Successfully</msg></center>";
+					
+}elseif($Action=="Decline" AND $Action !==""){
+	
+$updb= "UPDATE enrollment SET Status='Declined', Approve='Declined' WHERE EId='$EId'";		
+		$ud=mysqli_query ($link, $updb);
+			$msg="<center><msg>Approved Successfully</msg></center>";
+					
+}elseif($Action=="Delete" AND $Action !==""){
+	
+$capply= "DELETE FROM enrollment WHERE EId='$EId'";		
+		$ud=mysqli_query ($link, $updb);
+			$msg="<center><msg>Deleted Successfully</msg></center>";
+					
+}
+
+}
+
+
+
+
+//AddCourse();
+if(isset($_GET["LId"])){
+$LId =  strtoupper(mysqli_real_escape_string  ($link,$_GET['LId']));	
+$Email =  strtoupper(mysqli_real_escape_string  ($link,$_GET['Email']));	
+	
+ $sql = " SELECT * FROM learner WHERE LId='$Ld' OR Email='$Email'";
+	
+		if($result = mysqli_query($link, $sql)){
+		if(mysqli_num_rows($result)>0){
+		
+		if($rownum=mysqli_num_rows($result)){}
+while($row = mysqli_fetch_array($result)){
+	$LId="$row[LId]";
+$Email="$row[Email]";
+$Fname="$row[Fname]";
+$Mname="$row[Mname]";
+$Sname="$row[Sname]";
+$Phoneno="$row[PhoneNo]";
+$Gender="$row[Gender]";
+$Dob="$row[Dob]";
+$State="$row[State]";
+$Lga="$row[Lga]";
+$Qualification="$row[Qualification]";
+$Specialisation="$row[Specialisation]";
+$Userip="$row[UserIp]";
+$DateJoin="$row[DateJoin]";
+}
+		}
+		}
+}
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<?php require_once 'title.php';?>
+
+		<!-- Site favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="vendors/images/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="images/fav.png"
+		/>
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/cropperjs/dist/cropper.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<?php require_once 'header.php';?>
+		<?php require_once 'right-sidebar.php';?>
+		<?php require_once 'left-sidebar.php';?>
+		<div class="mobile-menu-overlay"></div>
+
+		<div class="main-container">
+			<div class="pd-ltr-20 xs-pd-20-10">
+				<div class="min-height-200px">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="title">
+									<h4>Profile</h4>
+								</div>
+								<nav aria-label="breadcrumb" role="navigation">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a href="index.php">Home</a>
+										</li>
+										<li class="breadcrumb-item active" aria-current="page">
+											Profile
+										</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+							<div class="pd-20 card-box height-100-p">
+								<div class="profile-photo">
+									<a
+										href="modal"
+										data-toggle="modal"
+										data-target="#modal"
+										class="edit-avatar"
+										><i class="fa fa-pencil"></i
+									></a>
+									<img
+										src="vendors/images/photo1.jpg"
+										alt=""
+										class="avatar-photo"
+									/>
+									<div
+										class="modal fade"
+										id="modal"
+										tabindex="-1"
+										role="dialog"
+										aria-labelledby="modalLabel"
+										aria-hidden="true"
+									>
+										<div
+											class="modal-dialog modal-dialog-centered"
+											role="document"
+										>
+											<div class="modal-content">
+												<div class="modal-body pd-5">
+													<div class="img-container">
+														<img
+															id="image"
+															src="vendors/images/photo2.jpg"
+															alt="Picture"
+														/>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<input
+														type="submit"
+														value="Update"
+														class="btn btn-primary"
+													/>
+													<button
+														type="button"
+														class="btn btn-default"
+														data-dismiss="modal"
+													>
+														Close
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<h5 class="text-center h5 mb-0"><?php echo "$Fname $Mname $Sname"; ?></h5>
+								<p class="text-center text-muted font-14">
+									Learner ID: <?php echo "$LId"; ?>
+								</p>
+								<div class="profile-info">
+									<h5 class="mb-20 h5 text-blue">User Information</h5>
+									<ul>
+										<li>
+											<span>Email Address:</span>
+											<?php echo "$Email"; ?>
+										</li>
+										<li>
+											<span>Phone Number:</span>
+											<?php echo "$Phoneno"; ?>
+										</li>
+										<li>
+											<span>Gender:</span>
+											<?php echo "$Gender"; ?>
+										</li>
+										<li>
+											<span>Birth Date:</span>
+											<?php echo "$Dob"; ?>
+										</li>
+										<li>
+											<span>State:</span>
+											<?php echo "$State"; ?>
+										</li>
+										<li>
+											<span>Lga:</span>
+											<?php echo "$Lga"; ?>
+										</li>
+										<li>
+											<span>Date Join:</span>
+											<?php echo "$DateJoin"; ?>
+										</li>
+										<li>
+											<span>IP Address:</span>
+										<?php echo "$UserIp"; ?>
+										</li>
+									</ul>
+								</div>
+								
+								
+							</div>
+						</div>
+						<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 mb-30">
+							<div class="card-box height-100-p overflow-hidden">
+								<div class="profile-tab height-100-p">
+									<div class="tab height-100-p">
+										<ul class="nav nav-tabs customtab" role="tablist">
+											<li class="nav-item">
+												<a
+													class="nav-link active"
+													data-toggle="tab"
+													href="#timeline"
+													role="tab"
+													>Timeline</a
+												>
+											</li>
+											<li class="nav-item">
+												<a
+													class="nav-link"
+													data-toggle="tab"
+													href="#tasks"
+													role="tab"
+													>Tasks</a
+												>
+											</li>
+											<li class="nav-item">
+												<a
+													class="nav-link"
+													data-toggle="tab"
+													href="#setting"
+													role="tab"
+													>Settings</a
+												>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<!-- Timeline Tab start -->
+											<div
+												class="tab-pane fade show active"
+												id="timeline"
+												role="tabpanel"
+											>
+												<div class="pd-20">
+													<div class="profile-timeline">
+														<div class="timeline-month">
+														<?php echo "$msg $updb $Action"; ?>
+															<h5>Courses Enrolled</h5>
+														</div>
+														<div class="profile-timeline-list">
+														<form method="Post" action="">
+														<table class="data-table table stripe hover nowrap">
+														<?php
+														$sqlb = " SELECT * FROM enrollment WHERE LId='$LId' ORDER BY EId DESC ";
+	
+														$resultb = mysqli_query($link, $sqlb);
+														//if(mysqli_num_rows($resultb)>0)){
+														$totalb=mysqli_num_rows($resultb);
+														echo"<tr><th>S/N</th><th>Course Title</th><th>Date Enrooled</th><th>Status</th><th><spanb>Action</spanb></th></tr>";
+														while($rowb = mysqli_fetch_array($resultb) AND $i<=$totalb){
+															$i++;
+														echo"
+														<tr><td>$i</td><td>$rowb[CourseTitle]</td><td>$rowb[SDate]</td><td>$rowb[Status]</td>";
+														if($rowb['Provider'] !='NITDA' AND $rowb['Approve'] =='Pending'){
+														echo"<td><input type='text' name='EId' value='$rowb[EId]'><select name='Action'><option value=''>Select</option><option value='Approve'>Approve</option><option value='Decline'>Decline</option><option value='Remove'>Remove</option></select><button type='submit' name='Go'>Go</button></td>";}echo"</tr>
+														";
+														}
+														?>
+														</form>
+														</table>
+														</div>
+													
+													</div>
+													
+													<div class="profile-timeline">
+														<div class="timeline-month">
+															<h5>Educational Info</h5>
+														</div>
+														<div class="profile-timeline-list">
+														<table class="data-table table stripe hover nowrap">
+														<?php
+														
+														echo"<tr><th>Level of Education</th><th>Specialisation</th></tr>
+														<tr><td>$Qualification</td><td>$Specialisation</td></tr>
+														";
+														
+														?>
+														</table>
+														</div>
+													
+													</div>
+													<a href="enrollment-request.php"><button class="btn btn-success btn-lg btn-block">Back to Request</button></a>
+												</div>
+											</div>
+											<!-- Timeline Tab End -->
+											<!-- Tasks Tab start -->
+											<div class="tab-pane fade" id="tasks" role="tabpanel">
+												<div class="pd-20 profile-task-wrap">
+													<div class="container pd-0">
+														<!-- Open Task start -->
+														<div class="task-title row align-items-center">
+															<div class="col-md-8 col-sm-12">
+																<h5>Open Tasks (4 Left)</h5>
+															</div>
+															<div class="col-md-4 col-sm-12 text-right">
+																<a
+																	href="task-add"
+																	data-toggle="modal"
+																	data-target="#task-add"
+																	class="bg-light-blue btn text-blue weight-500"
+																	><i class="ion-plus-round"></i> Add</a
+																>
+															</div>
+														</div>
+														<div class="profile-task-list pb-30">
+															<ul>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-1"
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-1"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet, consectetur
+																	adipisicing elit. Id ea earum.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2019</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-2"
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-2"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2019</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-3"
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-3"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet, consectetur
+																	adipisicing elit.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2019</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-4"
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-4"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet. Id ea earum.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2019</span>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<!-- Open Task End -->
+														<!-- Close Task start -->
+														<div class="task-title row align-items-center">
+															<div class="col-md-12 col-sm-12">
+																<h5>Closed Tasks</h5>
+															</div>
+														</div>
+														<div class="profile-task-list close-tasks">
+															<ul>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-close-1"
+																			checked=""
+																			disabled=""
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-close-1"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet, consectetur
+																	adipisicing elit. Id ea earum.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2018</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-close-2"
+																			checked=""
+																			disabled=""
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-close-2"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2018</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-close-3"
+																			checked=""
+																			disabled=""
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-close-3"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet, consectetur
+																	adipisicing elit.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2018</span>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="task-close-4"
+																			checked=""
+																			disabled=""
+																		/>
+																		<label
+																			class="custom-control-label"
+																			for="task-close-4"
+																		></label>
+																	</div>
+																	<div class="task-type">Email</div>
+																	Lorem ipsum dolor sit amet. Id ea earum.
+																	<div class="task-assign">
+																		Assigned to Ferdinand M.
+																		<div class="due-date">
+																			due date <span>22 February 2018</span>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<!-- Close Task start -->
+														<!-- add task popup start -->
+														<div
+															class="modal fade customscroll"
+															id="task-add"
+															tabindex="-1"
+															role="dialog"
+														>
+															<div
+																class="modal-dialog modal-dialog-centered"
+																role="document"
+															>
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<h5
+																			class="modal-title"
+																			id="exampleModalLongTitle"
+																		>
+																			Tasks Add
+																		</h5>
+																		<button
+																			type="button"
+																			class="close"
+																			data-dismiss="modal"
+																			aria-label="Close"
+																			data-toggle="tooltip"
+																			data-placement="bottom"
+																			title=""
+																			data-original-title="Close Modal"
+																		>
+																			<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pd-0">
+																		<div class="task-list-form">
+																			<ul>
+																				<li>
+																					<form>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Task Type</label
+																							>
+																							<div class="col-md-8">
+																								<input
+																									type="text"
+																									class="form-control"
+																								/>
+																							</div>
+																						</div>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Task Message</label
+																							>
+																							<div class="col-md-8">
+																								<textarea
+																									class="form-control"
+																								></textarea>
+																							</div>
+																						</div>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Assigned to</label
+																							>
+																							<div class="col-md-8">
+																								<select
+																									class="selectpicker form-control"
+																									data-style="btn-outline-primary"
+																									title="Not Chosen"
+																									multiple=""
+																									data-selected-text-format="count"
+																									data-count-selected-text="{0} people selected"
+																								>
+																									<option>Ferdinand M.</option>
+																									<option>Don H. Rabon</option>
+																									<option>Ann P. Harris</option>
+																									<option>
+																										Katie D. Verdin
+																									</option>
+																									<option>
+																										Christopher S. Fulghum
+																									</option>
+																									<option>
+																										Matthew C. Porter
+																									</option>
+																								</select>
+																							</div>
+																						</div>
+																						<div class="form-group row mb-0">
+																							<label class="col-md-4"
+																								>Due Date</label
+																							>
+																							<div class="col-md-8">
+																								<input
+																									type="text"
+																									class="form-control date-picker"
+																								/>
+																							</div>
+																						</div>
+																					</form>
+																				</li>
+																				<li>
+																					<a
+																						href="javascript:;"
+																						class="remove-task"
+																						data-toggle="tooltip"
+																						data-placement="bottom"
+																						title=""
+																						data-original-title="Remove Task"
+																						><i class="ion-minus-circled"></i
+																					></a>
+																					<form>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Task Type</label
+																							>
+																							<div class="col-md-8">
+																								<input
+																									type="text"
+																									class="form-control"
+																								/>
+																							</div>
+																						</div>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Task Message</label
+																							>
+																							<div class="col-md-8">
+																								<textarea
+																									class="form-control"
+																								></textarea>
+																							</div>
+																						</div>
+																						<div class="form-group row">
+																							<label class="col-md-4"
+																								>Assigned to</label
+																							>
+																							<div class="col-md-8">
+																								<select
+																									class="selectpicker form-control"
+																									data-style="btn-outline-primary"
+																									title="Not Chosen"
+																									multiple=""
+																									data-selected-text-format="count"
+																									data-count-selected-text="{0} people selected"
+																								>
+																									<option>Ferdinand M.</option>
+																									<option>Don H. Rabon</option>
+																									<option>Ann P. Harris</option>
+																									<option>
+																										Katie D. Verdin
+																									</option>
+																									<option>
+																										Christopher S. Fulghum
+																									</option>
+																									<option>
+																										Matthew C. Porter
+																									</option>
+																								</select>
+																							</div>
+																						</div>
+																						<div class="form-group row mb-0">
+																							<label class="col-md-4"
+																								>Due Date</label
+																							>
+																							<div class="col-md-8">
+																								<input
+																									type="text"
+																									class="form-control date-picker"
+																								/>
+																							</div>
+																						</div>
+																					</form>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="add-more-task">
+																			<a
+																				href="#"
+																				data-toggle="tooltip"
+																				data-placement="bottom"
+																				title=""
+																				data-original-title="Add Task"
+																				><i class="ion-plus-circled"></i> Add
+																				More Task</a
+																			>
+																		</div>
+																	</div>
+																	<div class="modal-footer">
+																		<button
+																			type="button"
+																			class="btn btn-primary"
+																		>
+																			Add
+																		</button>
+																		<button
+																			type="button"
+																			class="btn btn-secondary"
+																			data-dismiss="modal"
+																		>
+																			Close
+																		</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- add task popup End -->
+													</div>
+												</div>
+											</div>
+											<!-- Tasks Tab End -->
+											<!-- Setting Tab start -->
+											<div
+												class="tab-pane fade height-100-p"
+												id="setting"
+												role="tabpanel"
+											>
+												<div class="profile-setting">
+													<form>
+														<ul class="profile-edit-list row">
+															<li class="weight-500 col-md-6">
+																<h4 class="text-blue h5 mb-20">
+																	Edit Your Personal Setting
+																</h4>
+																<div class="form-group">
+																	<label>Full Name</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Title</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Email</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="email"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Date of birth</label>
+																	<input
+																		class="form-control form-control-lg date-picker"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Gender</label>
+																	<div class="d-flex">
+																		<div
+																			class="custom-control custom-radio mb-5 mr-20"
+																		>
+																			<input
+																				type="radio"
+																				id="customRadio4"
+																				name="customRadio"
+																				class="custom-control-input"
+																			/>
+																			<label
+																				class="custom-control-label weight-400"
+																				for="customRadio4"
+																				>Male</label
+																			>
+																		</div>
+																		<div
+																			class="custom-control custom-radio mb-5"
+																		>
+																			<input
+																				type="radio"
+																				id="customRadio5"
+																				name="customRadio"
+																				class="custom-control-input"
+																			/>
+																			<label
+																				class="custom-control-label weight-400"
+																				for="customRadio5"
+																				>Female</label
+																			>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label>Country</label>
+																	<select
+																		class="selectpicker form-control form-control-lg"
+																		data-style="btn-outline-secondary btn-lg"
+																		title="Not Chosen"
+																	>
+																		<option>United States</option>
+																		<option>India</option>
+																		<option>United Kingdom</option>
+																	</select>
+																</div>
+																<div class="form-group">
+																	<label>State/Province/Region</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Postal Code</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Phone Number</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Address</label>
+																	<textarea class="form-control"></textarea>
+																</div>
+																<div class="form-group">
+																	<label>Visa Card Number</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Paypal ID</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																	/>
+																</div>
+																<div class="form-group">
+																	<div
+																		class="custom-control custom-checkbox mb-5"
+																	>
+																		<input
+																			type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck1-1"
+																		/>
+																		<label
+																			class="custom-control-label weight-400"
+																			for="customCheck1-1"
+																			>I agree to receive notification
+																			emails</label
+																		>
+																	</div>
+																</div>
+																<div class="form-group mb-0">
+																	<input
+																		type="submit"
+																		class="btn btn-primary"
+																		value="Update Information"
+																	/>
+																</div>
+															</li>
+															<li class="weight-500 col-md-6">
+																<h4 class="text-blue h5 mb-20">
+																	Edit Social Media links
+																</h4>
+																<div class="form-group">
+																	<label>Facebook URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Twitter URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Linkedin URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Instagram URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Dribbble URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Dropbox URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Google-plus URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Pinterest URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Skype URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group">
+																	<label>Vine URL:</label>
+																	<input
+																		class="form-control form-control-lg"
+																		type="text"
+																		placeholder="Paste your link here"
+																	/>
+																</div>
+																<div class="form-group mb-0">
+																	<input
+																		type="submit"
+																		class="btn btn-primary"
+																		value="Save & Update"
+																	/>
+																</div>
+															</li>
+														</ul>
+													</form>
+												</div>
+											</div>
+											<!-- Setting Tab End -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php require_once 'footer.php'; ?>
+			</div>
+		</div>
+		<!-- welcome modal start -->
+		
+		<!-- welcome modal end -->
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="src/plugins/cropperjs/dist/cropper.js"></script>
+		<script>
+			window.addEventListener("DOMContentLoaded", function () {
+				var image = document.getElementById("image");
+				var cropBoxData;
+				var canvasData;
+				var cropper;
+
+				$("#modal")
+					.on("shown.bs.modal", function () {
+						cropper = new Cropper(image, {
+							autoCropArea: 0.5,
+							dragMode: "move",
+							aspectRatio: 3 / 3,
+							restore: false,
+							guides: false,
+							center: false,
+							highlight: false,
+							cropBoxMovable: false,
+							cropBoxResizable: false,
+							toggleDragModeOnDblclick: false,
+							ready: function () {
+								cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
+							},
+						});
+					})
+					.on("hidden.bs.modal", function () {
+						cropBoxData = cropper.getCropBoxData();
+						canvasData = cropper.getCanvasData();
+						cropper.destroy();
+					});
+			});
+		</script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	</body>
+</html>
