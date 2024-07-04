@@ -57,6 +57,11 @@ $CourseCode =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_GET[
 		 $Progress3="$rowe[Progress3]";
 		 $RefIda="$rowe[RefId]";
 		 $EIda="$rowe[EId]";
+		 $Step="$rowe[Step]";
+		 if($Step == 0){
+			$upd="UPDATE enrollment SET Step='1' WHERE RefId='$RefId' AND LId='$_SESSION[LId]'";	
+	$exc=mysqli_query ($link, $upd); 
+		 }
 }
 }
 	
@@ -68,16 +73,16 @@ $LId =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['LId']
 $CourseCode =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['CourseCode'])));
 $Name =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['Name'])));
 $View =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['View'])));
-$Feedback=  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['Feedback'])));
+$Feedback=  htmlspecialchars(mysqli_real_escape_string  ($link,$_POST['Feedback']));
 $AddedBy =  htmlspecialchars(ucwords(mysqli_real_escape_string  ($link,$_POST['CourseCode'])));
 
 //$RefId=time();
 $da= getdate();
 $Date="$da[mday] $da[month] $da[year]";
 
-$sql = " INSERT INTO feedback (LId,CourseCode,Name,View,Feedback,Date) VALUES 
-('$LId','$CourseCode', '$Name','$View','$Feedback','$Date')";
-$exc=mysqli_query ($link, $sql);
+$sql = " INSERT INTO feedback (LId,CourseCode,Name,View,Feedback,Date,Display,Dorder) VALUES 
+('$LId','$CourseCode', '$Name','$View','$Feedback','$Date','','')";
+$excf=mysqli_query ($link, $sql);
 if(mysqli_num_rows($result)>0){
 $msg="<msg>Your feedback sent successfully!</msg>";	
 }else{

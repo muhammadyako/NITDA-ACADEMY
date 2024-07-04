@@ -136,7 +136,7 @@
 								</div>
 								<h4>Practice</h4>
 								</br>
-								<button class="primary-btn text-pascalercase">Enabling Transformation</button>
+								<button class="primary-btn text-uppercase">Enabling Transformation</button>
 								<div class="desc-wrap">
 									<p style="text-align: justify;">
 										Demonstrating your knowledge is a critical part of learning. NART courses and programs provide a space to practice with quizzes, open response assessments, virtual environments, and more.
@@ -153,7 +153,7 @@
 								</div>
 								<h4>Apply</h4>
 								</br>
-								<button class="primary-btn text-pascalercase">Enabling Transformation</button>
+								<button class="primary-btn text-uppercase">Enabling Transformation</button>
 								
 								<div class="desc-wrap">
 									<p style="text-align: justify;">

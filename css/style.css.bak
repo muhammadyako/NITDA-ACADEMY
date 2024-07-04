@@ -47,13 +47,13 @@ background-color: #4c9e9e;
 .mmenu {
   display: flex;
   gap: 1em;
-  font-family: cursive;
-  font-size: 14px;
+  font-family: 'Roboto';
+  font-size: 18px;
 }
 
 .mmenu li:hover {
   background-color: #4c9e9e;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: 0.3s ease;
 }
 
@@ -271,7 +271,6 @@ background: yellow;
 
 
 .profile-btn{
-	
 float: right;	
 }
 

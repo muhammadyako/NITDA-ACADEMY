@@ -33,7 +33,7 @@ li {
 
 .mnav-links .active{
 	color: yellow;
-background-color: #4c9e9e;
+	background-color: #4c9e9e;
   border-radius: 5px;
   transition: 0.3s ease;
 		}
@@ -47,13 +47,13 @@ background-color: #4c9e9e;
 .mmenu {
   display: flex;
   gap: 1em;
-  font-family: cursive;
-  font-size: 14px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 18px;
 }
 
 .mmenu li:hover {
   background-color: #4c9e9e;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: 0.3s ease;
 }
 
@@ -108,7 +108,7 @@ input[type=checkbox] {
 /* HAMBURGER MENU */
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 27px;
   user-select: none;
 }
 

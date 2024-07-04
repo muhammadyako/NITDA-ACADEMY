@@ -201,7 +201,7 @@ $RefId = strtoupper(mysqli_real_escape_string ($link,$_GET['RefId']));
 					<!-- Simple Datatable start -->
 					<div class="card-box mb-30">
 						<div class="pd-20">
-							<h4 class="text-blue h4">Users</h4>
+							<h4 class="text-blue h4">Quiz Questions</h4>
 							<p>
 								<?php echo "$dl"; ?>
 								<?php echo "$msg"; ?>

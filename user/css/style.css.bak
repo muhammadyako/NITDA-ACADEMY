@@ -16,14 +16,14 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Poppins-Regular";
-  font-size: 13px;
+  font-family: 'Roboto';
+    font-size: 13px;
   margin: 0;
   color: #999; }
 
 input, textarea, select {
-  font-family: "Muli-Regular";
-  font-size: 13px;
+ font-family: 'Roboto';
+   font-size: 13px;
   color: #666; }
 
 p, h1, h2, h3, h4, h5, h6, ul {
@@ -92,7 +92,7 @@ select {
 h3 {
   text-transform: uppercase;
   font-size: 35px;
-  font-family: "Poppins-Medium";
+  font-family: 'Roboto';
   color: #014E2C;
   letter-spacing: 3px;
   margin-bottom: 22px;
@@ -112,7 +112,7 @@ h3 {
   position: relative; }
   .form-wrapper label {
     display: block;
-    font-family: "Muli-SemiBold";
+    font-family: 'Roboto';
     font-size: 17px;
     color: #4c4c4c;
     margin-bottom: 8px; }
@@ -184,7 +184,7 @@ button {
   background: #014E2C;
   color: #fff;
   text-transform: uppercase;
-  font-family: "Muli-SemiBold";
+  font-family: 'Roboto';
   font-size: 15px;
   position: relative;
   transition: all 0.3s ease; }
@@ -225,9 +225,23 @@ button {
     background-position: center center; } }
 @media (max-width: 991px) {
   .inner {
-    width: 60%; } }
+    width: 60%; }
+.innerb {
+    width: 60%; }
+	}
 @media (max-width: 767px) {
   .inner {
+    width: 100%;
+    transform: translateY(0);
+    position: static;
+    padding: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none; }
+	
+	.innerb {
     width: 100%;
     transform: translateY(0);
     position: static;
