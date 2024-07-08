@@ -97,14 +97,14 @@ $record="<center><spanb>No record found! Click on below button to enroll a cours
 			
 			.accordion {
   background-color: #eee;
-  color: green;
+  color: black;
   cursor: pointer;
   padding: 10px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 22px;
+  font-size: 17px;
   transition: 0.4s;
   margin: 5px;
 }
@@ -205,26 +205,26 @@ $record="<center><spanb>No record found! Click on below button to enroll a cours
 						<?php echo "<center><b><spanb><b>$_GET[i]</b></spanb></b></center> <b><center><msg>$_GET[m]</msg></b></center>"; ?>
 						<blockquote class="generic-blockquoteb">
 						<div class="row">
-					<button class='accordion'>I have signed up but, don't recieve the verification code</button>
+					<button class='accordion'>I have signed up but, don't recieve the verification code?</button>
 					<div class='panel'>
 					<p>You can click on RESEND link and the verification code will be resend to your registerd email. check both spam and inbox.
 					</p>
 					</div>
 					
-					<button class='accordion'>I enrolled in a course but recive this message "Sorry, you cannnot enroll this course by yourself but a request was sent to the Academy!"</button>
+					<button class='accordion'>I enrolled in a course but recive this message "Sorry, you cannnot enroll this course by yourself but a request was sent to the Academy!"?</button>
 					<div class='panel'>
-					<p>Yes, it because the course is not offered directly by the NITDA rather offered through our partners such as COURSERA and CISCO and requires approval by the admin. Also kindly note that there is certain criateria and it's highly competative.
+					<p>Yes, it because the course is not offered directly by the NITDA rather offered through our partners such as COURSERA and CISCO and requires approval by the admin. Also kindly note that there are certain criateria and it's highly competative.
 					</p>
 					</div>
 					
 					
-					<button class='accordion'>I have completed my course work but can't take a Quiz</button>
+					<button class='accordion'>I have completed my course work but can't take a Quiz?</button>
 					<div class='panel'>
-					<p>The system will only allow you to participate in a Quiz one week before the end of your course duration. If you enroll in a four weeks course you can only be allowed to take quiz after three weeks.
+					<p>The system will only allow you to participate in a Quiz one week before the end of your course duration. If you enroll in a four weeks course foe example, you can only be allowed to take quiz after three weeks.
 					</p>
 					</div>
 					
-					<button class='accordion'>I have completed my Quiz questions but recieve a message to retake after five days </button>
+					<button class='accordion'>I have completed my Quiz questions but recieve a message to retake after five days? </button>
 					<div class='panel'>
 					<p>It because your score is less than 50%, you must score 50% and above to pass the Quiz else you are given another change to retake the Quiz after five days.
 					</p>
@@ -244,7 +244,7 @@ $record="<center><spanb>No record found! Click on below button to enroll a cours
 					
 					<button class='accordion'>Can I enroll in multiple courses concurrently? </button>
 					<div class='panel'>
-					<p>Yes, you can, but maximum of four at a tile.
+					<p>Yes, you can, but maximum of four at a time.
 					</p>
 					</div>
 					

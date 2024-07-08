@@ -225,7 +225,7 @@ $record="<center><spanb>No record found! Click on below button to enroll a cours
 							}
 							}
 						
-						$prog = " SELECT * FROM enrollment WHERE LId='$LId' AND Status='Inprogress' AND RefId='$row[RefId]' ORDER BY EId DESC ";	
+						$prog = " SELECT * FROM enrollment WHERE LId='$LId' AND RefId='$row[RefId]' ORDER BY EId DESC ";	
 		if($resultp = mysqli_query($link, $prog)){
 		if(mysqli_num_rows($resultp)>0){				
 		$rowp = mysqli_fetch_array($resultp);

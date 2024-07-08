@@ -111,7 +111,7 @@ require_once 'connectors/session.php';
 							
 						</div>
 					</div>
-					<div class="pd-20 bg-white border-radius-4 box-shadow mb-30"><center><img src="vendors/images/logo.png" width="600" height="400"></center></div>
+					<div class="pd-20 bg-white border-radius-4 box-shadow mb-30"><center><img src="vendors/images/homelogo.png" width="850" height="400"></center></div>
 				</div>
 				<div class="stablize">
 		</div>

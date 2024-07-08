@@ -1,1 +1,1 @@
-<title>NITDA-Acadamy</title>
+<title>NITDA-ACADEMY</title>

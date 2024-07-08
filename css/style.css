@@ -23,7 +23,7 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 2px;
-  background-color: teal;
+  background-color: #194866;
   color: #fff;  
 }
 
@@ -48,7 +48,7 @@ li {
   display: flex;
   gap: 1em;
   font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .mmenu li:hover {

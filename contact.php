@@ -1,4 +1,4 @@
-	<?php require_once 'connectors/session.php';?>
+	<?php //require_once 'connectors/session.php';?>
 	<?php
 session_start();
 ?>

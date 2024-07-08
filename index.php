@@ -172,7 +172,7 @@
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">		<h4 class="mb-10">EXPLORE MORE COURSES CATEGORIES</h4>						
+							<div class="title text-center">		<h4 class="mb-10">EXPLORE MORE COURSE CATEGORIES</h4>						
 								<p><form class="form-wrap" method="get" action="search">
 								<input class="form-control" type="text" width="500" placeholder="Search for a  course....." name="search" value="">
 						</br>
@@ -189,7 +189,7 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
-								<h4 class="mb-10">Course Categories</h4>
+								<h4 class="mb-10">COURSE CATEGORIES</h4>
 								
 							</div>
 						</div>
@@ -228,7 +228,7 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
-								<h4 class="mb-10">Popular Courses</h4>
+								<h4 class="mb-10">MOST ENROLLED COURSES</h4>
 								<!--<p>There is a moment in the life of any aspiring.</p>-->
 							</div>
 						</div>
@@ -289,29 +289,47 @@
 				<div class="container">
 					<div class="row justify-content-between align-items-center">
 						<div class="col-lg-6 col-md-6 search-course-left">
-							<h1 class="text-white">
-								Enhence your digital capacity <br>
-								at NITDA Academy!
-							</h1>
-							<p>
-								inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.
-							</p>
+							<h3 class="text-white">
+								Our Six Competence Areas You Need to Know!
+							</h3>
+							
 							<div class="row details-content">
 								<div class="col single-detials">
-									<span class="lnr lnr-graduation-hat"></span>
-									<a href="#"><h4>Expert Instructors</h4></a>		
-									<p>
-										Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-									</p>						
+									<span class="lnr lnr-license"></span>
+									<h4>Devices & Software </h4></a>		
+															
 								</div>
 								<div class="col single-detials">
 									<span class="lnr lnr-license"></span>
-									<a href="#"><h4>Certification</h4></a>		
-									<p>
-										Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-									</p>						
-								</div>								
+									<h4>Information & Data Literacy</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Communication & Collaboration</h4></a>		
+															
+								</div>
+								
 							</div>
+							<div class="row details-content">
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Digital Content Creation</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Safety</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Problem Solving</h4></a>		
+															
+								</div>
+								
+							</div>
+							
 						</div>
 						<?php require_once 'search-profile.php'; ?>
 					</div>
@@ -320,13 +338,7 @@
 			<!-- End search-course Area -->
 			
 		
-			<!-- Start upcoming-event Area -->
-			 
-			<!-- End upcoming-event Area -->
-						
-			<!-- Start review Area -->
-			
-			<!-- End review Area -->	
+			</br></br>
 			
 			<!-- Start cta-one Area -->
 			<section class="cta-one-area relative section-gap">
@@ -350,7 +362,7 @@
 			</section>
 			<!-- End cta-one Area -->
 <!-- Start blog Area --></br>
-<section class="blog-area section-gap" id="blog">
+			<section class="blog-area section-gap" id="blog">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
@@ -365,25 +377,24 @@
 							<div class="thumb">
 								<img class="img-fluid" src="img/b1.jpg" alt="">								
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
-								<h5>Addiction When Gambling Becomes A Problem</h5>
+							<p class="meta">13 December, 2023  |  By <a href="#">Abdulraheem Muhammed Etudaye</a></p>
+							<a href="#">
+								<h5>International Financial Corporation (IFC) And World Bank Group Courtesy Visit</h5>
 							</a>
 							<p>
-								Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in front of their.
-							</p>
+								In furtherance of the Presidential mandate to accelerate national productivity through technological innovation, the Director General, National Information Technology Development Agency (NITDA), Kashifu Inuwa Abdullahi, received....			</p>
 							<a href="#" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>		
 						</div>
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
 								<img class="img-fluid" src="img/b2.jpg" alt="">								
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
-								<h5>Computer Hardware Desktops And Notebooks</h5>
+							<p class="meta">25 April, 2023  |  By <a href="#">S. Alkali</a></p>
+							<a href="#">
+								<h5>Connect The Dot’s Conference And Igniting Resilience Book Launch</h5>
 							</a>
 							<p>
-								Ah, the technical interview. Nothing like it. Not only does it cause anxiety, but it causes anxiety for several different reasons. 
+								The Director General, National Information Technology Development Agency (NITDA), Kashifu Inuwa Abdullahi, has outlined the agency’s plan for the development of Nigeria’s IT sector with a focus on....
 							</p>
 							<a href="#" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>						
 						</div>
@@ -391,12 +402,14 @@
 							<div class="thumb">
 								<img class="img-fluid" src="img/b3.jpg" alt="">								
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
-								<h5>Make Myspace Your Best Designed Space</h5>
+							<p class="meta">25 June, 2024  |  By <a href="#">Radiya Nasir</a></p>
+							<a href="#">
+								<h5>DIGITAL LITERACY FOR ALL INITIATIVE</h5>
 							</a>
 							<p>
-								Plantronics with its GN Netcom wireless headset creates the next generation of wireless headset and other products such as wireless.
+								The National Information Technology Development Agency (NITDA) is introducing the 'Digital Literacy for All' initiative, a pioneering effort aimed at bridging the digital divide, in line with President 
+@officialABAT
+'s priority area to reform the economy to deliver sustained inclusive growth...
 							</p>
 							<a href="#" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>									
 						</div>
@@ -404,12 +417,12 @@
 							<div class="thumb">
 								<img class="img-fluid" src="img/b4.jpg" alt="">								
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
-								<h5>Video Games Playing With Imagination</h5>
+							<p class="meta">25 July, 2024  |  By <a href="#">Devine Buhari</a></p>
+							<a href="#">
+								<h5>The digital era is upon us, and it is brimming with opportunities for those with tech skills.</h5>
 							</a>
 							<p>
-								About 64% of all on-line teens say that do things online that they wouldn’t want their parents to know about.   11% of all adult internet 
+								The digital era is upon us, and it is brimming with opportunities for those with tech skills.....
 							</p>
 							<a href="#" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>							
 						</div>							

@@ -30,6 +30,17 @@
 						</li>
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-folder"></span
+								><span class="mtext">Generate Report</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="excel/enrollment.php">Enrollment Report</a></li>
+								<li><a href="excel/learning-progress.php">Learning Progress</a></li>
+								<li><a href="excel/state-enrollment.php">Learners Per State</a></li>								
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-envelope"></span
 								><span class="mtext">Request</span>
 							</a>

@@ -351,35 +351,54 @@
 				<div class="container">
 					<div class="row justify-content-between align-items-center">
 						<div class="col-lg-6 col-md-6 search-course-left">
-							<h1 class="text-white">
-								Get reduced fee <br>
-								during this Summer!
-							</h1>
-							<p>
-								inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.
-							</p>
+							<h3 class="text-white">
+								Our Six Competence Areas You Need to Know!
+							</h3>
+							
 							<div class="row details-content">
 								<div class="col single-detials">
-									<span class="lnr lnr-graduation-hat"></span>
-									<a href="#"><h4>Expert Instructors</h4></a>		
-									<p>
-										Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-									</p>						
+									<span class="lnr lnr-license"></span>
+									<h4>Devices & Software </h4></a>		
+															
 								</div>
 								<div class="col single-detials">
 									<span class="lnr lnr-license"></span>
-									<a href="#"><h4>Certification</h4></a>		
-									<p>
-										Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-									</p>						
-								</div>								
+									<h4>Information & Data Literacy</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Communication & Collaboration</h4></a>		
+															
+								</div>
+								
 							</div>
+							<div class="row details-content">
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Digital Content Creation</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Safety</h4></a>		
+															
+								</div>
+								<div class="col single-detials">
+									<span class="lnr lnr-license"></span>
+									<h4>Problem Solving</h4></a>		
+															
+								</div>
+								
+							</div>
+							
 						</div>
 						<?php require_once 'search-profile.php'; ?>
 					</div>
 				</div>	
 			</section>
-			<!-- End search-course Area -->			
+			<!-- End search-course Area -->
+			
 
 			<!-- Start upcoming-event Area -->
 			
